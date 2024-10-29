@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VFX Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cg.css">
+</head>
+<body>
+    <header>
+        <h1>VFX Portfolio</h1>
+    </header>
+
+    <section class="introduction">
+        <p>Explore a selection of my visual effects work, showcasing my passion for creativity and technical excellence.</p>
+    </section>
+
+    <section class="portfolio-grid">
+        <div class="portfolio-item" data-type="image" data-src="../photo/cat_catzaza.jpg">
+            <div class="image-wrapper">
+                <img src="../photo/cat_catzaza.jpg" alt="Project 1 Thumbnail" class="project-media">
+            </div>
+            <div class="details">
+                <h2>Project 1</h2>
+                <p>A short description of the visual effects work.</p>
+            </div>
+        </div>
+        <div class="portfolio-item" data-type="video" data-src="../video/reel.mp4">
+            <div class="image-wrapper">
+                <video class="project-media" autoplay muted loop poster="thumbnail2.jpg">
+                    <source src="../video/reel.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="details">
+                <h2>Project 2</h2>
+                <p>A short description of the visual effects work.</p>
+            </div>
+        </div>
+        <!-- Add more portfolio items as needed -->
+    </section>
+
+    <!-- Modal for full media view -->
+    <div id="media-modal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img id="modal-image" class="modal-media" style="display:none;">
+            <video id="modal-video" class="modal-media" autoplay loop muted style="display:none;">
+                <source id="modal-video-src" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 VFX Portfolio. Connect with me on <a href="#">Social Media</a>.</p>
+    </footer>
+
+    <script src="cg.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+#! C:/Program Files/Nuke15.1v1/nuke-15.1.1.dll -nx
+#write_info Write1 file:"D:/WebsiteMaking/vfxbank/newvfx/photo/sun.jpg" format:"1200 1200 1" chans:":rgba.red:rgba.green:rgba.blue:" framerange:"1 100" fps:"0" colorspace:"default (sRGB)" datatype:"8 bit" transfer:"unknown" views:"main" colorManagement:"Nuke"
+version 15.1 v1
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="-1" y="-8" w="1920" h="1009" maximized="1" screen="0">
+        <splitter orientation="1">
+            <split size="1049"/>
+            <splitter orientation="2">
+                <split size="729"/>
+                <dock id="" activePageId="Viewer.1">
+                    <page id="Viewer.1"/>
+                </dock>
+                <split size="234"/>
+                <dock id="" activePageId="Curve Editor.1">
+                    <page id="DopeSheet.1"/>
+                    <page id="Curve Editor.1"/>
+                </dock>
+            </splitter>
+            <split size="867"/>
+            <splitter orientation="2">
+                <split size="482"/>
+                <dock id="" activePageId="Properties.1" focus="true">
+                    <page id="Properties.1"/>
+                    <page id="uk.co.thefoundry.backgroundrenderview.1"/>
+                </dock>
+                <split size="481"/>
+                <dock id="" activePageId="DAG.1">
+                    <page id="DAG.1"/>
+                    <page id="DAG.2"/>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ format "1200 1200 0 0 1200 1200 1 1200"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+ colorManagement Nuke
+ workingSpaceLUT linear
+ monitorLut sRGB
+ monitorOutLUT rec709
+ int8Lut sRGB
+ int16Lut sRGB
+ logLut Cineon
+ floatLut linear
+}
+Constant {
+ inputs 0
+ channels rgb
+ color {1 0.7499961853 0 1}
+ name Constant1
+ xpos -405
+ ypos -218
+}
+Dot {
+ name Dot2
+ xpos -371
+ ypos -69
+}
+Text2 {
+ inputs 0
+ font_size_toolbar 100
+ font_width_toolbar 100
+ font_height_toolbar 100
+ message SUNFLOWER
+ old_message {{83 85 78 70 76 79 87 69 82}
+   }
+ box {271.5 118.5 928.5 219.5}
+ xjustify center
+ yjustify center
+ transforms {{0 2}
+   }
+ cursor_position 9
+ font {{ Yu Mincho : Regular : yumin.ttf : 0 }}
+ center {600 600}
+ cursor_initialised true
+ initial_cursor_position {{600 169}
+   }
+ group_animations {{0} imported: 0 selected: items: "root transform/"}
+ animation_layers {{1 11 600 600 0 0 1 1 0 0 0 0}
+   }
+ name Text1
+ xpos -229
+ ypos -145
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ name Merge2
+ xpos -229
+ ypos -72
+}
+Dot {
+ name Dot1
+ xpos -195
+ ypos -36
+}
+Read {
+ inputs 0
+ file_type png
+ file "C:/Users/baw21/Pictures/Screenshots/Screenshot 2024-08-12 202647.png"
+ format "1920 1080 0 0 1920 1080 1 HD_1080"
+ origset true
+ name Read1
+ xpos -40
+ ypos -237
+}
+Transform {
+ translate {83 0}
+ scale 2.5
+ center {960 540}
+ name Transform1
+ xpos -40
+ ypos -132
+}
+Reformat {
+ name Reformat1
+ xpos -40
+ ypos -95
+}
+Merge2 {
+ inputs 2
+ name Merge1
+ xpos -42
+ ypos -39
+}
+Write {
+ file D:/WebsiteMaking/vfxbank/newvfx/photo/sun.jpg
+ file_type jpeg
+ _jpeg_quality 1
+ checkHashOnRead false
+ ocioColorspace scene_linear
+ display default
+ view sRGB
+ beforeRender proWrite.render_with_script()
+ name Write1
+ xpos -42
+ ypos 33
+}
+Viewer {
+ frame 1
+ frame_range 1-100
+ monitorOutNDISenderName "Nuke - untitled - Viewer1"
+ monitorOutOutputTransform rec709
+ name Viewer1
+ xpos -42
+ ypos 80
+}
