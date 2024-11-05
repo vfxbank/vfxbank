@@ -207,11 +207,9 @@ header a:hover {
     transform: scale(1) translate(-50%, -50%);
 }
 
-.menu-item-1 { transform: translate(-150px, -150px); }
+.menu-item-1 { transform: translate(-150px, 50px); }
 .menu-item-2 { transform: translate(150px, -150px); }
 .menu-item-3 { transform: translate(150px, 150px); }
-.menu-item-4 { transform: translate(-150px, 150px); }
-.menu-item-5 { transform: translate(-200px, 150px); }
 
 /* Sections */
 section {
@@ -291,6 +289,7 @@ section:nth-of-type(odd) {
 #social-media {
     width: fill;
     height: fit-content;
+    overflow: hidden;
     padding: 60px 20px;
     background: #000000;
     text-align: center;
@@ -299,6 +298,7 @@ section:nth-of-type(odd) {
 }
 
 #social-media h2 {
+    height: fit-content;
     font-size: 0.7rem;
     margin-bottom: 1rem;
     color: #8a8a8a;
