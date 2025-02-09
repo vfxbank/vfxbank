@@ -59,20 +59,6 @@ header nav ul li a {
     gap: 40px;
 }
 
-.video-container {
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px;
-    text-align: center;
-}
-
-.video-container iframe {
-    width: 100%;
-    height: auto;
-    max-height: 350px;
-    border-radius: 8px;
-}
-
 .screenshots {
     margin-top: 40px;
 }
@@ -126,7 +112,7 @@ header nav ul li a {
 
 .image-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 10px;
     justify-content: center;
 }
