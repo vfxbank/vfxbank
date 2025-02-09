@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const letters = document.querySelectorAll('.parallax-text span');
     
-    // Assign random depth values to each letter
+
     letters.forEach((letter) => {
-        letter.dataset.depthX = Math.random() * 30 + 10; // Random depth between 10 and 40
-        letter.dataset.depthY = Math.random() * 30 + 10; // Random depth between 10 and 40
+        letter.dataset.depthX = Math.random() * 30 + 10; 
+        letter.dataset.depthY = Math.random() * 30 + 10; 
     });
 
-    // Handle scroll event to show/hide the navigation bar
+
     const header = document.querySelector('header');
     const heroSectionHeight = document.querySelector('.container').offsetHeight;
 
@@ -44,11 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollPosition = window.pageYOffset;
         
         photoItems.forEach((item, index) => {
-            const depth = index % 2 === 0 ? 5 : -5; // Alternate depth for a more dynamic effect
+            const depth = index % 2 === 0 ? 5 : -5; 
             const itemOffset = item.offsetTop;
             const windowHeight = window.innerHeight;
 
-            // Check if the item is in the viewport
+
             if (scrollPosition + windowHeight > itemOffset && scrollPosition < itemOffset + item.clientHeight) {
                 const parallaxEffect = (scrollPosition - itemOffset) * depth / 100;
                 item.style.transform = `translateY(${parallaxEffect}px)`;
@@ -63,16 +63,16 @@ document.addEventListener('DOMContentLoaded', () => {
     photoItems.forEach(item => {
         item.addEventListener('mousemove', (e) => {
             const rect = item.getBoundingClientRect();
-            const x = e.clientX - rect.left; // Mouse X relative to the item
-            const y = e.clientY - rect.top;  // Mouse Y relative to the item
-            const moveX = (x - rect.width / 2) * 0.1; // Adjust the multiplier for more or less movement
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top; 
+            const moveX = (x - rect.width / 2) * 0.1; 
             const moveY = (y - rect.height / 2) * 0.1;
 
             item.style.transform = `translate(${moveX}px, ${moveY}px)`;
         });
 
         item.addEventListener('mouseleave', () => {
-            item.style.transform = 'translate(0, 0)'; // Reset the position when the mouse leaves
+            item.style.transform = 'translate(0, 0)';
         });
     });
 });

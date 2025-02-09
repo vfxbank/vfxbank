@@ -1,13 +1,16 @@
-body {
-    font-family: 'Staatliches', sans-serif;
-    letter-spacing: .05rem;
+html, body {
+    letter-spacing: 0.05rem;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background-color: #1f1f1f;
 }
 
 header {
+    font-family: 'Staatliches', sans-serif;
     background: transparent;
     color: #fff;
     padding: 1rem 0;
@@ -17,27 +20,10 @@ header {
     z-index: 1000;
 }
 
-.header .container {
-    display: flex;
-    justify-content: center; /* Center the contents horizontally */
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative; /* Make space for the logo */
-}
-
-.header .logo {
-    font-family: 'Staatliches', sans-serif;
-    font-size: 2rem;
-    position: absolute; /* Position logo absolutely */
-    left: 2rem; /* Adjust as needed */
-}
-
 header nav {
     display: flex;
-    justify-content: center; /* Center the nav items */
-    flex: 1; /* Make the nav take up available space */
+    justify-content: center;
+    flex: 1;
 }
 
 header nav ul {
@@ -58,32 +44,37 @@ header nav ul li a {
     font-weight: bold;
 }
 
-#project {
-    padding: 80px 20px 20px;
-    background: #1f1f1f;
-}
-
-.container {
+.container-overview {
     padding-top: 1rem;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
+    flex: 1;
+}
+
+.container-breakdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
 }
 
 .video-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .video-container iframe {
     width: 100%;
-    height: 315px; /* Adjust height as needed */
-    max-width: 800px; /* Limit max-width for larger screens */
-    border: none;
+    height: auto;
+    max-height: 350px;
+    border-radius: 8px;
 }
 
 .screenshots {
-    margin: 40px 0;
+    margin-top: 40px;
 }
 
 .screenshots h2 {
@@ -91,23 +82,91 @@ header nav ul li a {
     margin-bottom: 20px;
 }
 
-.image-gallery {
+#project {
+    flex: 1;
+    padding: 80px 20px;
+    background: #1f1f1f;
+}
+
+.project-content {
     display: flex;
+    height: fit-content;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    gap: 20px; /* Increase spacing between images */
-    flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+    gap: 30px;
+}
+
+.project-text {
+    font-family: 'Staatliches', sans-serif;
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    text-align: left;
+}
+
+.video-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    text-align: center;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 350px; 
+    max-width: 800px; 
+    max-height: 500px; 
+    border-radius: 8px;
+}
+
+.screenshots {
+    margin-top: 40px;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    justify-content: center;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
 }
 
 .image {
-    flex: 1 1 30%; /* Allow each image to take up 30% of the container width */
-    max-width: 30%; /* Ensure images don't overflow the container */
+    flex: 1 1 30%;
+    max-width: 30%;
     box-sizing: border-box;
 }
 
 .image img {
     width: 100%;
     height: auto;
-    border-radius: 8px; /* Add a bit of rounding to the image corners */
+    border-radius: 8px;
+}
+
+.project-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.project-text {
+        flex: 1;
+        min-width: 300px;
+        max-width: 600px;
+        text-align: left;
 }
 
 .project-details {
@@ -123,25 +182,127 @@ header nav ul li a {
     margin-bottom: 10px;
 }
 
-footer {
-    background: #000;
-    color: #fff;
+#work-breakdown {
+    background: #252525;
+    padding: 60px 20px;
     text-align: center;
-    padding: 1rem;
 }
 
-footer .social-media a {
+.work-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 100%;
+    max-width: 900px;
+    gap: 20px;
+}
+
+.work-item img {
+    width: 45%;
+    max-width: 400px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.work-item img:hover {
+    transform: scale(1.05);
+}
+
+.work-text {
+    width: 100%;
+    text-align: left;
     color: #fff;
-    text-decoration: none;
-    margin: 0 0.5rem;
 }
 
-@media (max-width: 768px) {
-    .image-gallery {
-        flex-direction: column;
-    }
+.work-text-head {
+    width: 50%;
+    text-align: center;
+    color: #fff;
+}
 
-    .image {
-        max-width: 100%; /* Ensure full width on small screens */
-    }
+
+.work-text h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.work-text p {
+    font-size: 18px;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+#social-media {
+    width: fill;
+    padding: 60px 0px;
+    background: #0c0c0c;
+    text-align: center;
+
+}
+
+#social-media h2 {
+    height: fit-content;
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+    color: #8a8a8a;
+    font-weight: 700;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.wrap {
+    font-family: 'Staatliches', sans-serif;
+    font-weight: 200;
+    font-size: 10%;
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.social-icons img {
+    width: 40px;
 }

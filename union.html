@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VFXBANK - The Union</title>
+    <link rel="stylesheet" href="portstyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        window.openLightbox = function(img) {
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
+        };
+        function closeLightbox() {
+            lightbox.style.display = "none";
+        }
+        lightbox.addEventListener("click", function(event) {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+        });
+        window.closeLightbox = closeLightbox;
+    });
+    </script>    
+<body>
+    <header>
+        <div class="container-overview">
+            <nav>
+                <ul>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=wOFDrGYt1XA">Showreel</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="project">
+        <div class="container-overview">
+            <div class="project-content">
+                <article class="project-text">
+                    <h2>The Union</h2>
+                    <p>Personal Project</p>
+                    <br>Scope : Layout, Lighting, Composite
+                </article>
+                <div class="video-container">
+                    <img width="660" src="../photo/union/thevillage_LS_02_graded03.png" alt="theunionimg">
+                </div>
+            </div>
+    
+            <div class="screenshots">
+                <h3>Screenshots</h3>
+                <div class="image-gallery">
+                    <img src="../photo/union/thevillage_LS_02_graded03.png" alt="Screenshot 1" onclick="openLightbox(this)">
+                </div>
+                <div id="lightbox" class="lightbox">
+                     <span class="close" onclick="closeLightbox()">&times;</span>
+                     <img class="lightbox-content" id="lightbox-img">
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <section id="work-breakdown">
+        <div class="container-breakdown">
+            <div class="work-item">
+                <div class="work-text-haed">
+                </div>
+                <div class="work-text">
+                    <p>The idea came from a Netflix show and I like the scene they shot. I started to want to build some scenes I imagine.</p>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <img src="../photo/union/first_ft.png" alt="bd" onclick="openLightbox(this)">
+                <div class="work-text">
+                    <h3>The shot</h3>
+                    <p>is from when me and my friends testing the shot for the thesis. so I took an image and test to build a scene different from the original.</p>
+                </div>
+            </div>
+            <!--
+            <div class="work-item">
+                <img src="../photo/inmem/2.jpg" alt="Lighting Work" onclick="openLightbox(this)">
+                <img src="../photo/inmem/2.jpg" alt="Lighting Work" onclick="openLightbox(this)">
+                <div class="work-text">
+                    <h3>Lighting</h3>
+                    <p>I set up realistic lighting to match the live-action environment and enhance visual storytelling.</p>
+                </div>
+            </div> -->
+        </div>
+    </section> 
+
+
+<section id="social-media">
+    <h2 class="wrap">©2024 VFXBANK</h2>
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/nattawutboonmee/" target="_blank">
+            <img src="photo\LI-In-Bug.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.imdb.com/name/nm16404765/?ref_=ext_shr_lnk" target="_blank">
+            <img src="../photo/imdb.png" alt="imdb">
+        </a>
+        <a href="https://www.instagram.com/vfxbank/" target="_blank">
+            <img src="../photo/ig.png" alt="Instagram">
+        </a>
+    </div>
+</section>
+</body>
+</html>

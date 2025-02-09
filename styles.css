@@ -1,4 +1,4 @@
-/* Global Styles */
+
 html {
     scroll-behavior: smooth;
     height: 100%;
@@ -7,7 +7,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: #1f1f1f;
+    background: #121212;
     font-family: 'Nunito Sans', sans-serif;
     color: #ffffff;
     overflow-x: hidden;
@@ -15,7 +15,7 @@ body {
     height: fit-content;
 }
 
-/* Header */
+
 header {
     position: fixed;
     top: 0;
@@ -88,7 +88,7 @@ header a:hover {
     color: #00b2e2;
 }
 
-/* Hero Section */
+
 .container {
     display: flex;
     justify-content: center;
@@ -97,7 +97,7 @@ header a:hover {
     position: relative;
     z-index: 2;
     overflow: hidden;
-    margin-top: 60px; /* Adjust for header height */
+    margin-top: 60px;
     text-align: center;
 }
 
@@ -215,10 +215,10 @@ header a:hover {
 section {
     padding: 80px 20px;
     background: #1f1f1f;
-    border-bottom: 1px solid #444;
-    min-height: 100vh;
+    min-height: auto;
+    padding: 60px 20px;
     box-sizing: border-box;
-    margin-top: 60px; /* Adjust for header height */
+    margin-top: 60px; 
     text-align: center;
     color: #dcdcdc;
 }
@@ -234,19 +234,19 @@ section p {
     font-size: 1.2rem;
     line-height: 1.6;
     margin: 0 auto;
-    max-width: 800px; /* Center text and limit width */
+    max-width: 800px; 
 }
 
-/* Alternating Backgrounds */
+
 section:nth-of-type(even) {
-    background: #1f1f1f;
+    background: #121212;
 }
 
 section:nth-of-type(odd) {
-    background: #1f1f1f;
+    background: #121212 ;
 }
 
-/* Portfolio Section Photo Grid */
+
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -259,19 +259,18 @@ section:nth-of-type(odd) {
 
 .photo-item {
     overflow: hidden;
-    height: fit-content;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.1s ease; /* Faster transition for a responsive effect */
+    transition: transform 0.1s ease; 
     will-change: transform;
-    position: relative; /* Ensure that the item is positioned relative for proper movement */
+    position: relative; 
 }
 
 .photo-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease; /* Keep the scale effect on hover */
+    transition: transform 0.3s ease; 
 }
 
 .photo-item img:hover {
@@ -281,20 +280,17 @@ section:nth-of-type(odd) {
 
 .photo-item a {
     display: block;
-    text-decoration: none; /* Remove underline from links */
-    color: inherit; /* Inherit color from the parent */
+    text-decoration: none; 
+    color: inherit; 
 }
 
-/* Social Media Section */
+
 #social-media {
     width: fill;
-    height: fit-content;
-    overflow: hidden;
-    padding: 60px 20px;
-    background: #000000;
+    padding: 60px 0px;
+    background: #0c0c0c;
     text-align: center;
-    color: #dcdcdc;
-    border-top: 1px solid #444;
+
 }
 
 #social-media h2 {
@@ -311,6 +307,8 @@ section:nth-of-type(odd) {
     align-items: center;
     gap: 30px;
     margin-top: 20px;
+    margin: 0;
+    padding: 10px 0;
 }
 
 .wrap {

@@ -7,67 +7,124 @@
     <link rel="stylesheet" href="portstyles.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        window.openLightbox = function(img) {
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
+        };
+        function closeLightbox() {
+            lightbox.style.display = "none";
+        }
+        lightbox.addEventListener("click", function(event) {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+        });
+        window.closeLightbox = closeLightbox;
+    });
+    </script>    
 <body>
-    <!-- Header -->
     <header>
-        <div class="container">
+        <div class="container-overview">
             <nav>
                 <ul>
                     <li><a href="./">Home</a></li>
                     <li><a href="index.html#portfolio">Portfolio</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=wOFDrGYt1XA">showreel</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=wOFDrGYt1XA">Showreel</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Project Showcase -->
     <section id="project">
-        <div class="container">
-            <h1>ล้านปีแสง - Zom Marie</h1>
-            <div class="video-container">
-                <!-- Replace with your YouTube video URL -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/1dExltHITGo?si=_wjiB9X3ztfnPzVR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="screenshots">
-                <h2>Screenshots</h2>
-                <div class="image-gallery">
-                    <div class="image">
-                        <img src="../photo/zom/sh005.jpg" alt="Screenshot 1">
-                    </div>
-                    <div class="image">
-                        <img src="../photo/zom/sh009.jpg" alt="Screenshot 2">
-                    </div>
-                    <div class="image">
-                        <img src="../photo/zom/sh010.jpg" alt="Screenshot 3">
-                    </div>
-                    <div class="image">
-                        <img src="../photo/zom/sh022.jpg" alt="Screenshot 1">
-                    </div>
-                    <div class="image">
-                        <img src="../photo/zom/sh027.jpg" alt="Screenshot 2">
-                    </div>
-                    <div class="image">
-                        <img src="../photo/zom/sh032.jpg" alt="Screenshot 3">
-                    </div>
-                    <div class="image">
-                        <img src="../photo/zom/sh035.jpg" alt="Screenshot 1">
-                    </div>
-                    <div class="image">
-                        <img src="../photo/zom/sh039.jpg" alt="Screenshot 2">
-                    </div>
-                    <div class="image">
-                        <img src="../photo/zom/sh041.jpg" alt="Screenshot 3">
-                    </div>
+        <div class="container-overview">
+            <div class="project-content">
+                <article class="project-text">
+                    <h2>ล้านปีแสง</h2>
+                    <p>For this project, My work is to remove fishing lines that hang down the flowers.</p>
+                    <br>Top is original, bottom is the removed.
+                </article>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/1dExltHITGo?si=_wjiB9X3ztfnPzVR" title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="project-details">
-                <h2>Project Details</h2>
-                <p class="project-details2">Remove fishing lines that hang down the flowers</p>
-                <br><p class="project-details2">Top is the original Bottom is the removed</p>
+    
+            <div class="screenshots">
+                <h3>Screenshots</h3>
+                <div class="image-gallery">
+                    <img src="../photo/zom/sh005.jpg" alt="Screenshot 1" onclick="openLightbox(this)">
+                    <img src="../photo/zom/sh009.jpg" alt="Screenshot 2" onclick="openLightbox(this)">
+                    <img src="../photo/zom/sh010.jpg" alt="Screenshot 3" onclick="openLightbox(this)">
+                    <img src="../photo/zom/sh022.jpg" alt="Screenshot 4" onclick="openLightbox(this)">
+                    <img src="../photo/zom/sh027.jpg" alt="Screenshot 5" onclick="openLightbox(this)">
+                    <img src="../photo/zom/sh032.jpg" alt="Screenshot 6" onclick="openLightbox(this)">
+                    <img src="../photo/zom/sh035.jpg" alt="Screenshot 7" onclick="openLightbox(this)">
+                    <img src="../photo/zom/sh039.jpg" alt="Screenshot 8" onclick="openLightbox(this)">
+                    <img src="../photo/zom/sh041.jpg" alt="Screenshot 9" onclick="openLightbox(this)">
+                </div>
+                <div id="lightbox" class="lightbox">
+                     <span class="close" onclick="closeLightbox()">&times;</span>
+                     <img class="lightbox-content" id="lightbox-img">
+                </div>
             </div>
         </div>
     </section>
+ <!--  
+    <section id="work-breakdown">
+        <div class="container-breakdown">
+            <div class="work-item">
+                <div class="work-text-haed">
+                    <h3>Compositing</h3>
+                </div>
+                <video class="work-item" autoplay muted loop>
+                    <source src="../photo/inmem/InMemoriam_sh042_comp_v004_grade002.mp4" type="video/mp4">
+                </video>
+                <div class="work-text">
+                    <p>The most iconic shot I did compositing for this project is this shot. The shot is when the protagonist is lost his mind and sees everything floats around him. This shot was shot on blue screen and a little bit of ground he's standing. The CGI compositing part is really fun to work with. I use Foundry's Nuke to complete this shot. Let's see the flickering red-green light. I got CGI rendered image that have so many layers of each of bulb and they are all green. I setup each bulb separately to flicker them and then just turn them off</p>
+                </div>
+            </div>
 
+            <div class="work-item">
+                <img src="../photo/inmem/2.jpg" alt="Lighting Work" onclick="openLightbox(this)">
+                <img src="../photo/inmem/2.jpg" alt="Lighting Work" onclick="openLightbox(this)">
+                <div class="work-text">
+                    <h3>Lighting</h3>
+                    <p>I set up realistic lighting to match the live-action environment and enhance visual storytelling.</p>
+                </div>
+            </div>
+            <div class="work-item">
+                <img src="../photo/inmem/2.jpg" alt="Lighting Work" onclick="openLightbox(this)">
+                <img src="../photo/inmem/2.jpg" alt="Lighting Work" onclick="openLightbox(this)">
+                <div class="work-text">
+                    <h3>Lighting</h3>
+                    <p>I set up realistic lighting to match the live-action environment and enhance visual storytelling.</p>
+                </div>
+            </div>
+        </div>
+    </section> 
+-->
+
+<section id="social-media">
+    <h2 class="wrap">©2024 VFXBANK</h2>
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/nattawutboonmee/" target="_blank">
+            <img src="photo\LI-In-Bug.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.imdb.com/name/nm16404765/?ref_=ext_shr_lnk" target="_blank">
+            <img src="../photo/imdb.png" alt="imdb">
+        </a>
+        <a href="https://www.instagram.com/vfxbank/" target="_blank">
+            <img src="../photo/ig.png" alt="Instagram">
+        </a>
+    </div>
+</section>
 </body>
 </html>
